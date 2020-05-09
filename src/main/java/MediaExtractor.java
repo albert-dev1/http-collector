@@ -32,7 +32,7 @@ public class MediaExtractor {
         Elements imports = doc.select("link[href]").not("[hreflang]");
 
         for (Element mediaElement : media) {
-            String linkStr = mediaElement.attr("src").replaceAll("\r","").replaceAll("\n","").replaceAll("\t","");
+            String linkStr = mediaElement.attr("src").replaceAll("\r","").replaceAll("\n","").replaceAll("\t","").trim();
             if(!checkExcludePattern(linkStr)) {
                 continue;
             }
