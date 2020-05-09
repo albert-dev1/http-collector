@@ -45,7 +45,7 @@ public class MediaExtractor {
         }
 
         for (Element importElement : imports) {
-            String linkStr = importElement.attr("href").replaceAll("\r","").replaceAll("\n","").replaceAll("\t","");
+            String linkStr = importElement.attr("href").replaceAll("\r","").replaceAll("\n","").replaceAll("\t","").trim();
             if(!checkExcludePattern(linkStr)) {
                 continue;
             }
