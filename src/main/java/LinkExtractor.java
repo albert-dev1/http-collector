@@ -23,7 +23,7 @@ public class LinkExtractor {
         Elements links = document.select("a");
 
         for (Element link : links) {
-            String linkStr = link.attr("href").replaceAll("\r","").replaceAll("\n","").replaceAll("\t","");
+            String linkStr = link.attr("href").replaceAll("\r","").replaceAll("\n","").replaceAll("\t","").trim();
             if(!checkExcludePattern(linkStr)) {
                 continue;
             }
